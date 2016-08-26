@@ -10,8 +10,8 @@ job('candlepin_pr_bugzilla_checker'){
 
     steps {
         shell('echo "first step"')
-//        python {
-//           command ('print "APPLES!"')
-//        }
+        python {
+            command('print "APPLES!"')
+        }
     }
 }
