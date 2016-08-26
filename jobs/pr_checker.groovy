@@ -10,9 +10,6 @@ job('candlepin_pr_bugzilla_checker'){
 
     steps {
         shell('echo "first step"')
-        python {
-            command('print \"Apple Tree!\"')
-            nature('python')
-        }
+        shell ('python --version')
     }
 }
