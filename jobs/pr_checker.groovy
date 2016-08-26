@@ -11,9 +11,8 @@ job('candlepin_pr_bugzilla_checker'){
     steps {
         shell('echo "first step"')
         python {
-            command('print "APPLES!"')
+            command('print "APPLES 3 !"')
             nature('python')
-            pythonName('python')
         }
     }
 }
