@@ -12,4 +12,11 @@ job('candlepin_pr_bugzilla_checker'){
         shell('echo "first step"')
         shell ('python --version')
     }
+
+    publishers {
+        publishBuild {
+            // only keep the last 10 builds for a maximum of 7 days
+            discardOldBuilds(7, 10)
+        }
+    }
 }
