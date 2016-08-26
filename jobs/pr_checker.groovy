@@ -12,6 +12,7 @@ job('candlepin_pr_bugzilla_checker'){
         shell('echo "first step"')
         python {
             command('print "APPLES!"')
+            nature('python')
         }
     }
 }
