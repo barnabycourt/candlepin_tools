@@ -13,6 +13,7 @@ job('candlepin_pr_bugzilla_checker'){
         python {
             command('print "APPLES!"')
             nature('python')
+            pythonName('python')
         }
     }
 }
