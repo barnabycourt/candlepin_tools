@@ -1,5 +1,7 @@
 
-job('candlepin_pr_bugzilla_checker'){
+job('candlepin_pr_bugzilla_checker') {
+    // Keep the last 10 builds
+    logRotator(-1, 10)
     wrappers {
         // Enable access to the github & the bugzilla user
         credentialsBinding {
@@ -12,11 +14,11 @@ job('candlepin_pr_bugzilla_checker'){
         shell('echo "first step"')
         shell ('python --version')
     }
-
-    publishers {
-        publishBuild {
-            // only keep the last 10 builds for a maximum of 7 days
-            discardOldBuilds(7, 10)
-        }
-    }
+//
+//    publishers {
+//        publishBuild {
+//            // only keep the last 10 builds for a maximum of 7 days
+//            discardOldBuilds(7, 10)
+//        }
+//    }
 }
