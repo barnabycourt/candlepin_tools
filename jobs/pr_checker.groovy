@@ -11,7 +11,7 @@ job('candlepin_pr_bugzilla_checker'){
     steps {
         shell('echo "first step"')
         python {
-            command('print &quot;Apple Tree!&quot;')
+            command('print \"Apple Tree!\"')
             nature('python')
         }
     }
