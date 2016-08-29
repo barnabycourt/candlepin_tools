@@ -24,7 +24,7 @@ job('candlepin_pr_bugzilla_checker') {
         python {
             command(pythonScript)
 //            nature('python')
-            nature(readFileFromWorkspace('job/pr_checker.py'))
+            nature(readFileFromWorkspace('jobs/pr_checker.py'))
         }
     }
 }
