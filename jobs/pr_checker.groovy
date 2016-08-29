@@ -1,7 +1,15 @@
+//def toolsGitUrl = 'git@github.com:barnabycourt/candlepin_tools.git'
+//def candlepinGitUrl = 'git@github.com:barnabycourt/candlepin.git'
+
+def String pythonScript = 'print \'pear\''
 
 job('candlepin_pr_bugzilla_checker') {
+
     // Keep the last 10 builds
     logRotator(-1, 10)
+//    scm {
+//        git(toolsGitUrl)
+//    }
     wrappers {
         // Enable access to the github & the bugzilla user
         credentialsBinding {
@@ -13,12 +21,9 @@ job('candlepin_pr_bugzilla_checker') {
     steps {
         shell('echo "first step"')
         shell ('python --version')
+        python {
+            command(pythonScript)
+            nature('python')
+        }
     }
-//
-//    publishers {
-//        publishBuild {
-//            // only keep the last 10 builds for a maximum of 7 days
-//            discardOldBuilds(7, 10)
-//        }
-//    }
 }
