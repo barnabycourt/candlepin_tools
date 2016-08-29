@@ -23,7 +23,8 @@ job('candlepin_pr_bugzilla_checker') {
         shell ('python --version')
         python {
             command(pythonScript)
-            nature('python')
+//            nature('python')
+            nature(readFileFromWorkspace('job/pr_checker.py'))
         }
     }
 }
