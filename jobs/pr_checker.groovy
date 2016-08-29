@@ -1,7 +1,7 @@
 //def toolsGitUrl = 'git@github.com:barnabycourt/candlepin_tools.git'
 //def candlepinGitUrl = 'git@github.com:barnabycourt/candlepin.git'
 
-def String pythonScript = 'print \'pear\''
+//def String pythonScript = 'print \'pear\''
 
 job('candlepin_pr_bugzilla_checker') {
 
@@ -22,9 +22,9 @@ job('candlepin_pr_bugzilla_checker') {
         shell('echo "first step"')
         shell ('python --version')
         python {
-            command(pythonScript)
-//            nature('python')
-            nature(readFileFromWorkspace('jobs/pr_checker.py'))
+            command(readFileFromWorkspace('jobs/pr_checker.py'))
+//            command(pythonScript)
+            nature('python')
         }
     }
 }
