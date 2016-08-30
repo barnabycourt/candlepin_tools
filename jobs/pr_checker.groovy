@@ -9,9 +9,9 @@ job('candlepin_pr_bugzilla_checker') {
 
     // Keep the last 10 builds
     logRotator(-1, 10)
-//    scm {
-//        git(toolsGitUrl)
-//    }
+    parameters {
+        stringParam('sha1', '', 'checksum of the commit to test')
+    }
     scm {
 
         git {
