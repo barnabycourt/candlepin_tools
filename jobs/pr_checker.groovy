@@ -29,7 +29,8 @@ job('candlepin_pr_bugzilla_checker') {
 //            userWhitelist(user_whitelist)
 //            orgWhitelist('my_github_org')
 //            orgWhitelist(['your_github_org', 'another_org'])
-//            cron('H/5 * * * *')
+            // Test Once a minute for now
+            cron('H/1 * * * *')
 //            triggerPhrase('OK to test')
 //            onlyTriggerPhrase()
 //            useGitHubHooks()
