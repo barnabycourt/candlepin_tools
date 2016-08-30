@@ -20,7 +20,7 @@ job('candlepin_pr_bugzilla_checker') {
     }
     triggers {
         githubPullRequest {
-            adminlist('barnabycourt')
+            admins(['barnabycourt'])
 //            userWhitelist('you@you.com')
 //            userWhitelist(user_whitelist)
 //            orgWhitelist('my_github_org')
