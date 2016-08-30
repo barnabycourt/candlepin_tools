@@ -1,6 +1,6 @@
 //def toolsGitUrl = 'git@github.com:barnabycourt/candlepin_tools.git'
 def String candlepinGitUrl = 'git@github.com:barnabycourt/candlepin.git'
-def String[] github_admin_whitelist = ['barnabycourt']
+//def String[] github_admin_whitelist = ['barnabycourt']
 
 job('candlepin_pr_bugzilla_checker') {
 
@@ -20,7 +20,7 @@ job('candlepin_pr_bugzilla_checker') {
     }
     triggers {
         githubPullRequest {
-            admins(github_admin_whitelist)
+            adminlist('barnabycourt')
 //            userWhitelist('you@you.com')
 //            userWhitelist(user_whitelist)
 //            orgWhitelist('my_github_org')
@@ -32,18 +32,18 @@ job('candlepin_pr_bugzilla_checker') {
 //            permitAll()
 //            autoCloseFailedPullRequests()
 //            allowMembersOfWhitelistedOrgsAsAdmin()
-            extensions {
-                commitStatus {
-                    context('Checking the GitHub & Bugzilla bookkeeping')
-                    triggeredStatus('starting deployment to staging site...')
-                    startedStatus('deploying to staging site...')
-//                    statusUrl('http://mystatussite.com/prs')
-                    completedStatus('SUCCESS', 'All is well')
-                    completedStatus('FAILURE', 'Something went wrong. Investigate!')
-                    completedStatus('PENDING', 'still in progress...')
-                    completedStatus('ERROR', 'Something went really wrong. Investigate!')
-                }
-            }
+//            extensions {
+//                commitStatus {
+//                    context('Checking the GitHub & Bugzilla bookkeeping')
+//                    triggeredStatus('starting deployment to staging site...')
+//                    startedStatus('deploying to staging site...')
+////                    statusUrl('http://mystatussite.com/prs')
+//                    completedStatus('SUCCESS', 'All is well')
+//                    completedStatus('FAILURE', 'Something went wrong. Investigate!')
+//                    completedStatus('PENDING', 'still in progress...')
+//                    completedStatus('ERROR', 'Something went really wrong. Investigate!')
+//                }
+//            }
         }
     }
     wrappers {
