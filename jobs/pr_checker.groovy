@@ -1,8 +1,11 @@
 //def toolsGitUrl = 'git@github.com:barnabycourt/candlepin_tools.git'
-def String candlepinGitUrl = 'git@github.com:barnabycourt/candlepin.git'
+//def String candlepinGitUrl = 'git@github.com:barnabycourt/candlepin.git'
+def String candlepinGitProject = 'barnabycourt/candlepin'
 //def String[] github_admin_whitelist = ['barnabycourt']
 
 job('candlepin_pr_bugzilla_checker') {
+
+//    githubProjectUrl(candlepinGitUrl)
 
     // Keep the last 10 builds
     logRotator(-1, 10)
@@ -10,9 +13,10 @@ job('candlepin_pr_bugzilla_checker') {
 //        git(toolsGitUrl)
 //    }
     scm {
+
         git {
             remote {
-                github(candlepinGitUrl)
+                github(candlepinGitProject)
                 refspec('+refs/pull/*:refs/remotes/origin/pr/*')
             }
             branch('${sha1}')
