@@ -9,12 +9,14 @@ job('candlepin_pr_bugzilla_checker') {
 //    scm {
 //        git(toolsGitUrl)
 //    }
-    git {
-        remote {
-            github(candlepinGitUrl)
-            refspec('+refs/pull/*:refs/remotes/origin/pr/*')
+    scm {
+        git {
+            remote {
+                github(candlepinGitUrl)
+                refspec('+refs/pull/*:refs/remotes/origin/pr/*')
+            }
+            branch('${sha1}')
         }
-        branch('${sha1}')
     }
     triggers {
         githubPullRequest {
